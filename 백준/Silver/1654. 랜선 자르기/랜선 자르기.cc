@@ -6,7 +6,7 @@ long long int arr[10001];
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    
+
     int K, N;
     long long int mid, num, mx = 0;
 
@@ -18,7 +18,7 @@ int main() {
     }
 
     long long int left = 1, right = mx; // 탐색 범위 지정
-    long long int result = 0;  // 최종 답을 저장할 변수
+    long long int result = 0;  
 
     while (left <= right) {
         mid = left + (right - left) / 2;
@@ -29,16 +29,16 @@ int main() {
             sum += arr[i] / mid;
         }
 
-        // 랜선 개수가 충분하면 mid 길이를 답으로 잠정 저장하고, 더 큰 길이를 탐색
+        // 랜선 개수가 충분하면 길이의 최대값을 찾아감
         if (sum >= N) {
             result = mid;  // 가능한 답을 저장
             left = mid + 1;  // 더 긴 길이 탐색
-        } else {
+        }
+        else {
             right = mid - 1;  // 랜선 개수가 부족하면 더 짧은 길이 탐색
         }
     }
 
-    // 최종 답 출력
     cout << result;
     return 0;
 }
