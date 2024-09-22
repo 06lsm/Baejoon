@@ -7,12 +7,11 @@ long long int divide(long long int a,long long int b, long long int c) {
     long long int half = divide(a, b / 2, c);
     half = (half * half) % c;
 
-    if (b % 2 == 0) {
-        return half = half % c;
+    if (b % 2 != 0) {
+        half = half * a % c;
     }
-    else {
-        return half = half * a % c;
-    }
+    return half;
+
 }
 int main() {
     ios_base::sync_with_stdio(0);
