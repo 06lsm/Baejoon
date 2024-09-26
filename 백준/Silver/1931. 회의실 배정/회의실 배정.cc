@@ -4,11 +4,7 @@ using namespace std;
 pair<long int,long int> val[100001];
 long int N, cou=0, endN;
 
-//회의 끝나는시간 오름차순
-bool compare(pair<int, int> a, pair<int, int> b) {
-    return a.second < b.second;
-}
-
+//회의 끝나는시간 오름차순, 끝나느 시간 같으면 시작시간 오름차순
 bool compare2(pair<int, int> a, pair<int, int> b) {
     if (a.second == b.second) {
         return a.first < b.first;
